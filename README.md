@@ -62,12 +62,26 @@ Works on OS X and Linux Debian / Ubuntu. The `nCurses` library is used for the v
 
 #### corewar - Virtual Machine
 `./corewar [-hcvdD [cycle nb]] ([-n nb] file.cor) ...`
+
 ![usage_corewar](resources/screenshots/corewar_usage.jpg)
+
+You can combine some flags. For example the flags -c (nCurses) and -v (Verbose)
+
+![verbose](resources/screenshots/vm_sample_verbose.gif)
+
+##### Keys
+* <kbd>spacebar</kbd> Play / Pause
+* <kbd>▲</kbd> or <kbd>▶</kbd> Speed up (respectively +1 or +10)
+* <kbd>▼</kbd> or <kbd>◀</kbd> Speed down (respectively -1 or -10)
+* <kbd>@</kbd> Go to cycle ... Then an integer superior than the current cycle is expected. Validate with <kbd>Enter</kbd>
+* <kbd>end</kbd> Quit properly the program
 
 #### asm - Assembler
 `./asm [-adfh] file.s`
+
 ![usage_corewar](resources/screenshots/asm_usage.jpg)
 
 #### rasm - Disassembler
 `./rasm file.cor ...`
+
 ![usage_corewar](resources/screenshots/rasm_usage.jpg)
