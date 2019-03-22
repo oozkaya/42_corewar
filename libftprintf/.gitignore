@@ -1,0 +1,9 @@
+printf
+a.out
+*._*
+*.a
+*.o
+*.swp
+*.gch
+.DS_Store
+Thumbs.db
