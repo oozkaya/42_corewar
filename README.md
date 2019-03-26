@@ -48,11 +48,11 @@ You can combine some flags. For example the flags -c (nCurses) and -v (Verbose)
 ![verbose](resources/screenshots/vm_sample_verbose.gif)
 
 ##### Keys
-* <kbd>spacebar</kbd> Play / Pause
-* <kbd>▲</kbd> or <kbd>▶</kbd> Speed up (respectively +1 or +10)
-* <kbd>▼</kbd> or <kbd>◀</kbd> Speed down (respectively -1 or -10)
-* <kbd>@</kbd> Go to cycle ... Then an integer superior than the current cycle is expected. Validate with <kbd>Enter</kbd>
-* <kbd>end</kbd> Quit properly the program
+* `spacebar` Play / Pause
+* `▲` or `▶` Speed up (respectively +1 or +10)
+* `▼` or `◀` Speed down (respectively -1 or -10)
+* `@` Go to cycle ... Then an integer superior than the current cycle is expected. Validate with `Enter`
+* `end` Quit properly the program
 
 #### asm - Assembler
 `./asm [-adfh] file.s`
@@ -69,8 +69,8 @@ You can combine some flags. For example the flags -c (nCurses) and -v (Verbose)
 
 | OP | Effects | Charge | Changes the `carry` ? | Octal Coding | `DIR` Bytes |
 |:-: | ------- | :----------------: | :--------------------: | :----------: | :----------------: |
-| **`live`**<br /><br />`DIR` | `live` is followed by 4 bytes which represents the player's number as unsigned int. This instruction means the player is alive. | 10 | No | No | 4 |
-| **`ld`**<br /><br />`DIR`&#124;`IND`<br />`REG` | Loads a value from an address into a register.<br /><br />*Example: `ld 34,r3` stores `REG_SIZE` octets from 34 bytes after the current address (`PC + (34 % IDX_MOD)`) into the register `r3`.*| 5 | Yes | Yes | 4 |
+| **`live`**→→`DIR` | `live` is followed by 4 bytes which represents the player's number as unsigned int. This instruction means the player is alive. | 10 | No | No | 4 |
+| **`ld`**→→`DIR`⎮`IND`<br />`REG` | Loads a value from an address into a register.<br /><br />*Example: `ld 34,r3` stores `REG_SIZE` octets from 34 bytes after the current address (`PC + (34 % IDX_MOD)`) into the register `r3`.*| 5 | Yes | Yes | 4 |
 | **`st`**<br /><br />`REG`<br />`IND`&#124;`REG` | Stores the value of a register to an address or into an other register.<br /><br />*Example1: `st r4,34` stores the value of `r4` to the address `(PC + (34 % IDX_MOD))`*<br />*Example2: `st r3,r8` copies `r3` into `r8`* | 5 | No | Yes | - |
 | **`add`**<br /><br />`REG`<br />`REG`<br />`REG` | The third parameter is the result of the addition of the first two.<br /><br />*Example: `add r2,r3,r5` sums `r2` and `r3` and stores the result into `r5`* | 10 | Yes | Yes | - |
 | **`sub`**<br /><br />`REG`<br />`REG`<br />`REG` | Like `add` with a substraction. | 10 | Yes | Yes | - |
