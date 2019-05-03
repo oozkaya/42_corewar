@@ -75,7 +75,7 @@ You can combine some flags. For example the flags -c (nCurses) and -v (Verbose)
 | **`add`** → `REG`,`REG`,`REG` | The third parameter is the result of the addition of the first two.  *Example: `add r2,r3,r5` sums `r2` and `r3` and stores the result into `r5`* | 10 | Yes | Yes | - |
 | **`sub`** → `REG`,`REG`,`REG` | Like `add` with a substraction. | 10 | Yes | Yes | - |
 | **`and`** → `REG`⎮`DIR`⎮`IND`,`REG`⎮`DIR`⎮`IND`,`REG` | Applies a binary AND '&' to the first two parameters. Then stores the result into a register.  *Example: `and r2,%0,r3` stores the result of `r2 & %0` into `r3`* | 6 | Yes | Yes | 4 |
-| **`or`** → `REG`⎮`DIR`⎮`IND`,`REG`⎮`DIR`⎮`IND`,`REG` | Like `and` with a binary OR 'âŽ®'. | 6 | Yes | Yes | 4 |
+| **`or`** → `REG`⎮`DIR`⎮`IND`,`REG`⎮`DIR`⎮`IND`,`REG` | Like `and` with a binary OR '⎮'. | 6 | Yes | Yes | 4 |
 | **`xor`** → `REG`⎮`DIR`⎮`IND`,`REG`⎮`DIR`⎮`IND`,`REG` | Like `and` with a binary EXCLUSIVE OR '^'. | 6 | Yes | Yes | 4 |
 | **`zjmp`** → `DIR` | Takes an index and makes a jump to this index if the carry is set to 1. If the carry is null, `zjmp` does nothing but consumes the same amount of time.  *Example: `zjmp %23` (with carry == 1) PC becames `(PC + (23 % IDX_MOD))`* | 20 | No | No | 2 |
 | **`ldi`** → `REG`⎮`DIR`⎮`IND`,`REG`⎮`DIR`,`REG` | Sums the first two parameters. Considers this sum as a relative address. Then reads `REG_SIZE` bytes from this address and stores it into a register.  *Example: `ldi 3,%4,r1` reads `IND_SIZE` bytes at `(PC + (3 % IDX_MOD))` and adds 4 to this value. Lets call this sum `S`. Then reads `REG_SIZE` bytes at `(PC + (S % IDX_MOD))` and copies the value into `r1`.* | 25 | No | Yes | 2 |
